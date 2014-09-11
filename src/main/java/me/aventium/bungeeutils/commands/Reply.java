@@ -11,8 +11,11 @@ import net.md_5.bungee.api.plugin.Command;
  */
 public class Reply extends Command {
 
-    public Reply() {
+    BungeeUtils utils;
+    
+    public Reply(BungeeUtils utils) {
         super("reply", "bungeeutils.message", "r");
+        this.utils = utils;
     }
 
     @Override
@@ -22,7 +25,7 @@ public class Reply extends Command {
             return;
         }
 
-        if(!Chat.messages.containsKey(sender.getName())) {
+        if(!utils.getMessage().containsKey(sender.getName())) {
             Chat.sendMessage(sender, "&cYou haven't messaged anyone!");
             return;
         }
@@ -35,8 +38,8 @@ public class Reply extends Command {
         }
 
         StringBuilder message = new StringBuilder();
-        for(int i = 0; i < args.length; i++) {
-            message.append(args[i] + " ");
+        for(String arg : args) {
+            message.append(arg + " ");
         }
 
         String msg = message.toString().trim();
@@ -44,7 +47,7 @@ public class Reply extends Command {
         Chat.sendMessage(sender, "&7[me -> " + player.getName() + "] " + msg);
         Chat.sendMessage(player, "&7[" + sender.getName() + " -> me] " + msg);
 
-        Chat.messages.put(player.getName(), sender.getName());
+        utils.getMessages().put(player.getName(), sender.getName());
     }
 
 }
