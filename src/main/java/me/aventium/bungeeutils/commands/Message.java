@@ -8,8 +8,11 @@ import net.md_5.bungee.api.plugin.Command;
 
 public class Message extends Command {
 
-    public Message() {
+    BungeeUtils utils;
+
+    public Message(BungeeUtils utils) {
         super("message", "bungeeutils.message", new String[]{ "tell", "msg" });
+        this.utils = utils;
     }
 
     @Override
@@ -33,10 +36,10 @@ public class Message extends Command {
 
         String msg = message.toString().trim();
 
-        Chat.sendMessage(sender, "&7[me -> " + player.getName() + "] " + msg);
-        Chat.sendMessage(player, "&7[" + sender.getName() + " -> me] " + msg);
+        utils.sendMessage(sender, "&7[me -> " + player.getName() + "] " + msg);
+        utils.sendMessage(player, "&7[" + sender.getName() + " -> me] " + msg);
 
-        Chat.messages.put(sender.getName(), player.getName());
-        Chat.messages.put(player.getName(), sender.getName());
+        utils.getMessages().put(sender.getName(), player.getName());
+        utils.getMessages().put(player.getName(), sender.getName());
     }
 }
