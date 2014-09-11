@@ -11,6 +11,7 @@ public class BungeeUtils extends Plugin {
 
     public void onEnable() {
         // Register commands
+        this.messages = new HashMap<String, String>();
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new Message());
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new Reply());
     }
