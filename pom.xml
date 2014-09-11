@@ -25,11 +25,12 @@
     </dependencies>
 
     <distributionManagement>
-    <repository>
-        <id>deploymentRepo</id>
-        <name>Aventium's Repository</name>
-        <url>http://repo.aventium.me/nexus/content/groups/public/</url>
-    </repository>
-</distributionManagement>
+        <repository>
+            <id>deploymentRepo</id>
+            <name>Aventium's Repository</name>
+            <url>http://repo.aventium.me/nexus/content/groups/public/</url>
+            <layout>default</layout>
+        </repository>
+    </distributionManagement>
 
 </project>
