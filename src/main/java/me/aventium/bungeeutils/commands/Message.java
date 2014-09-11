@@ -36,8 +36,8 @@ public class Message extends Command {
 
         String msg = message.toString().trim();
 
-        Chat.sendMessage(sender, "&7[me -> " + player.getName() + "] " + msg);
-        Chat.sendMessage(player, "&7[" + sender.getName() + " -> me] " + msg);
+        utils.sendMessage(sender, "&7[me -> " + player.getName() + "] " + msg);
+        utils.sendMessage(player, "&7[" + sender.getName() + " -> me] " + msg);
 
         utils.getMessages().put(sender.getName(), player.getName());
         utils.getMessages().put(player.getName(), sender.getName());
