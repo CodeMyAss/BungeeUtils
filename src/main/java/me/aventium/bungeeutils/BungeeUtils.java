@@ -19,4 +19,8 @@ public class BungeeUtils extends Plugin {
     public HashMap<String, String> getMessages() {
       return messages;
     }
+    
+    public void sendMessage(CommandSender arg0, String arg1) {
+      arg0.sendMessage(new TextComponent(ChatColor.translateAlternateColorCodes('&', arg1)));
+    }
 }
