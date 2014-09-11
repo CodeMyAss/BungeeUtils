@@ -39,7 +39,7 @@ public class Message extends Command {
         Chat.sendMessage(sender, "&7[me -> " + player.getName() + "] " + msg);
         Chat.sendMessage(player, "&7[" + sender.getName() + " -> me] " + msg);
 
-        Chat.messages.put(sender.getName(), player.getName());
-        Chat.messages.put(player.getName(), sender.getName());
+        utils.getMessages().put(sender.getName(), player.getName());
+        utils.getMessages().put(player.getName(), sender.getName());
     }
 }
