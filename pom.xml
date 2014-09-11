@@ -28,7 +28,7 @@
         <repository>
             <id>deploymentRepo</id>
             <name>Aventium's Repository</name>
-            <url>http://repo.aventium.me/nexus/content/groups/public/</url>
+            <url>http://repo.aventium.me/nexus/content/repositories/releases/</url>
             <layout>default</layout>
         </repository>
     </distributionManagement>
