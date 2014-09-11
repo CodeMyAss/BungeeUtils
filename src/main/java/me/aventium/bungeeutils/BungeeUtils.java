@@ -1,5 +1,6 @@
 package me.aventium.bungeeutils;
 
+import me.aventium.bungeeutils.commands.Count;
 import me.aventium.bungeeutils.commands.Message;
 import me.aventium.bungeeutils.commands.Reply;
 import me.aventium.bungeeutils.commands.SendServer;
@@ -21,6 +22,7 @@ public class BungeeUtils extends Plugin {
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new Message(this));
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new Reply(this));
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new SendServer(this));
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new Count(this));
     }
     
     public HashMap<String, String> getMessages() {
