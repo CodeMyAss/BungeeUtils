@@ -31,7 +31,7 @@ public class Reply extends Command {
         }
 
         ProxiedPlayer player = ProxyServer.getInstance().getPlayer(utils.getMessages().get(sender.getName()));
-ß
+
         if(player == null) {
             utils.sendMessage(sender, "&cPlayer '" + args[0] + "' not found!");
             return;
