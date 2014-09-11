@@ -2,6 +2,7 @@ package me.aventium.bungeeutils;
 
 import me.aventium.bungeeutils.commands.Message;
 import me.aventium.bungeeutils.commands.Reply;
+import me.aventium.bungeeutils.commands.SendServer;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
@@ -19,6 +20,7 @@ public class BungeeUtils extends Plugin {
         this.messages = new HashMap<String, String>();
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new Message(this));
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new Reply(this));
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new SendServer(this));
     }
     
     public HashMap<String, String> getMessages() {
