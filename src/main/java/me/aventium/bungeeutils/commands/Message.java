@@ -8,8 +8,11 @@ import net.md_5.bungee.api.plugin.Command;
 
 public class Message extends Command {
 
-    public Message() {
+    BungeeUtils utils;
+
+    public Message(BungeeUtils utils) {
         super("message", "bungeeutils.message", new String[]{ "tell", "msg" });
+        this.utils = utils;
     }
 
     @Override
