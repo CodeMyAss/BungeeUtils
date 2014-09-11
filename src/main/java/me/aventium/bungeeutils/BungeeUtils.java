@@ -2,8 +2,13 @@ package me.aventium.bungeeutils;
 
 import me.aventium.bungeeutils.commands.Message;
 import me.aventium.bungeeutils.commands.Reply;
+import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
+import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.plugin.Plugin;
+
+import java.util.HashMap;
 
 public class BungeeUtils extends Plugin {
     

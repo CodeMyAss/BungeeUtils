@@ -1,6 +1,6 @@
 package me.aventium.bungeeutils.commands;
 
-import me.aventium.bungeeutils.utils.Chat;
+import me.aventium.bungeeutils.BungeeUtils;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
@@ -21,19 +21,19 @@ public class Reply extends Command {
     @Override
     public void execute(CommandSender sender, String[] args) {
         if(args.length < 1) {
-            Chat.sendMessage(sender, "&c/reply <message>");
+            utils.sendMessage(sender, "&c/reply <message>");
             return;
         }
 
-        if(!utils.getMessage().containsKey(sender.getName())) {
-            Chat.sendMessage(sender, "&cYou haven't messaged anyone!");
+        if(!utils.getMessages().containsKey(sender.getName())) {
+            utils.sendMessage(sender, "&cYou haven't messaged anyone!");
             return;
         }
 
-        ProxiedPlayer player = ProxyServer.getInstance().getPlayer(Chat.messages.get(sender.getName()));
-
+        ProxiedPlayer player = ProxyServer.getInstance().getPlayer(utils.getMessages().get(sender.getName()));
+ß
         if(player == null) {
-            Chat.sendMessage(sender, "&cPlayer '" + args[0] + "' not found!");
+            utils.sendMessage(sender, "&cPlayer '" + args[0] + "' not found!");
             return;
         }
 
