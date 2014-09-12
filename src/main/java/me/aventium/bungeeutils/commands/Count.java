@@ -7,7 +7,7 @@ import net.md_5.bungee.api.config.ServerInfo;
 import net.md_5.bungee.api.plugin.Command;
 
 /**
- * Created by student on 9/11/14.
+ * Created by student on 9/11/14 (Never forget).
  */
 public class Count extends Command {
 
